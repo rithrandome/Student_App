@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/layoutSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_search"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:paddingStart="12sp"
+        android:paddingEnd="12sp"
+        android:layout_marginLeft="15sp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_search"
+            app:tint="@color/colorSearchIcon"
+            android:contentDescription="@string/app_name" />
+        
+        <EditText
+            android:id="@+id/inputSearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/colorWhite"
+            android:hint="@string/search_notes"
+            android:fontFamily="@font/ubuntu_regular"
+            android:inputType="text"
+            android:background="@null"
+            android:includeFontPadding="false"
+            android:textSize="17sp"
+            android:textColorHint="@color/colorTextHint"
+            android:layout_marginLeft="12dp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/layoutSearch"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="13dp"/>
+
+    <ImageView
+        android:id="@+id/image_add_note"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:background="@drawable/background_add_button"
+        android:src="@drawable/ic_add"
+        android:padding="5sp"
+        app:tint="@color/colorPrimary"
+        android:layout_margin="35dp"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:focusable="true" />
+
+</RelativeLayout>
