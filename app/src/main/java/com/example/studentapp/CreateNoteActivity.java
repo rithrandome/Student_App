@@ -138,7 +138,6 @@ public class CreateNoteActivity extends AppCompatActivity {
         note.setDateTime(textDateTime.getText().toString());
 
         Log.e("title",note.getTitle());
-
         if(alreadyAvailableNote == null){
             NotesDatabase.getDatabase(getApplicationContext()).notesDao().insertNote(note);
         }else {

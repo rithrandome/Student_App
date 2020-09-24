@@ -1,6 +1,5 @@
 package com.example.studentapp.dao;
 
-
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -15,7 +14,7 @@ import java.util.List;
 @Dao
 public interface NotesDao {
 
-    @Query("SELECT * FROM NotesEntity ORDER BY id DESC")
+    @Query("SELECT * FROM notes ORDER BY id DESC")
     List<NotesEntity> getAllNotes();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
