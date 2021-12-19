@@ -97,6 +97,7 @@ public class NotesFragment extends Fragment implements NotesListener {
         startActivityForResult(intent, REQUEST_CODE_UPDATE_NOTE);
 
     }
+
     private void getNotes(int requestCode, boolean isNotedDeleted) {
 
         List<NotesEntity> notes = NotesDatabase.getDatabase(getActivity().getApplicationContext()).notesDao().getAllNotes();

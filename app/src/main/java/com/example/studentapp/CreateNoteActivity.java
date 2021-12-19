@@ -25,7 +25,6 @@ public class CreateNoteActivity extends AppCompatActivity {
 
     private EditText inputNoteTitle, inputNoteContent;
     private TextView textDateTime;
-    private ImageView deleteImage;
     private NotesEntity alreadyAvailableNote;
     private AlertDialog dialogDeleteNote;
 
@@ -33,7 +32,7 @@ public class CreateNoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_note);
-        deleteImage = findViewById(R.id.image_delete);
+        ImageView deleteImage = findViewById(R.id.image_delete);
 
         ImageView imageBack = findViewById(R.id.image_back);
 

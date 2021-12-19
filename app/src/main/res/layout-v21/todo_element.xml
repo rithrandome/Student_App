@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutTodo"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:background="@drawable/background_note_element"
     android:orientation="vertical"
@@ -16,18 +16,15 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:buttonTint="@color/colorIcons"
-        android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp" />
+        android:layout_alignParentStart="true" />
 
     <RelativeLayout
         android:id="@+id/deleteTodo"
         android:layout_width="55dp"
-        android:layout_height="match_parent"
+        android:layout_height="60dp"
         android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true">
+        android:layout_alignParentEnd="true">
 
         <ImageView
             android:layout_width="30dp"
@@ -36,8 +33,8 @@
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_delete"
             app:tint="@color/delete"
-            android:layout_centerInParent="true"/>
-
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
 
@@ -51,7 +48,6 @@
         android:layout_marginBottom="8sp"
         android:hint="@string/todo_title"
         android:textColorHint="@color/colorTextHint"
-        android:layout_toRightOf="@+id/checkbox"
         android:fontFamily="@font/ubuntu_bold"
         android:includeFontPadding="false"
         android:textColor="@color/colorWhite"
@@ -65,7 +61,6 @@
         android:fontFamily="@font/ubuntu_regular"
         android:textSize="14sp"
         android:textColorHint="@color/colorTextHint"
-        android:layout_toRightOf="@+id/checkbox"
         android:layout_below="@+id/todoTitle"
         android:textColor="@color/colorNoteSubtitleText"
         android:includeFontPadding="false"

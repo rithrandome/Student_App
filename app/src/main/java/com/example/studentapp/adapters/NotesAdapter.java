@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> {
+public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHolder> {
 
     private List<NotesEntity> notes;
     private List<NotesEntity> notesSource;
@@ -35,8 +35,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(
+    public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new NoteViewHolder(
                 LayoutInflater.from(parent.getContext()).inflate(
                         R.layout.note_element,
                         parent,
@@ -46,7 +46,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull NoteViewHolder holder, final int position) {
 
         holder.setNote(notes.get(position));
         holder.layoutNote.setOnClickListener(new View.OnClickListener() {
@@ -69,12 +69,12 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
         return position;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class NoteViewHolder extends RecyclerView.ViewHolder{
 
         TextView textTitle, textDateTime;
         LinearLayout layoutNote;
 
-        public ViewHolder(@NonNull View itemView) {
+        public NoteViewHolder(@NonNull View itemView) {
             super(itemView);
 
             layoutNote = itemView.findViewById(R.id.layoutNote);
@@ -113,22 +113,4 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
         }, 500);
     }
 
-    public void cancelTimer(){
-        if(timer!=null)cancelTimer();
-    }
-//
-//    public void searchNote(final String searchKeyword) {
-//
-//        if(searchKeyword.trim().isEmpty()){
-//                    notes = notesSource;
-//                }else {
-//            ArrayList<NotesEntity> temp = new ArrayList<>();
-//            for (NotesEntity note : notesSource) {
-//                if (note.getTitle().toLowerCase().contains(searchKeyword.toLowerCase()))
-//                    temp.add(note);
-//            }
-//            notes = temp;
-//        }
-//
-//    }
 }
